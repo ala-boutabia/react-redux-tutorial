@@ -12,9 +12,10 @@ export const decrementAction = () => {
   };
 };
 
-export const incByAmountAction = () => {
+export const incByAmountAction = (amount) => {
   return {
     type: INC_BY_AMOUNT,
+    payload: amount,
   };
 };
 export const decByAmountAction = () => {

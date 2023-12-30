@@ -4,8 +4,8 @@ import {
   incrementAction,
   incByAmountAction,
 } from "../redux/actions/counterAction";
-import { INC_BY_AMOUNT } from "../redux/actions/types";
 import { useState } from "react";
+import { DEC_BY_AMOUNT } from "../redux/actions/types";
 
 const Counter = () => {
   const [amount, setAmount] = useState(0);
@@ -22,14 +22,18 @@ const Counter = () => {
   const handleDecrement = () => {
     dispatch(decrementAction());
   };
-  const handleIncByAmount = (amount) => {
+  const handleIncByAmount = (value) => {
+    dispatch(incByAmountAction(value));
+  };
+  const handleDecByAmount = (value) => {
     dispatch({
-      type: INC_BY_AMOUNT,
-      payload: amount,
+      type: DEC_BY_AMOUNT,
+      payload: value,
     });
   };
 
   const onAmountChange = (e) => setAmount(e.target.value);
+  console.log(amount);
   return (
     <div>
       <p>{countState}</p>
@@ -37,10 +41,13 @@ const Counter = () => {
       <button onClick={handleDecrement}>Decrement</button>
       <div>
         <br />
+        <input type="number" value={amount} onChange={onAmountChange} />
         <button onClick={() => handleIncByAmount(amount)}>
           Increment by amount
         </button>
-        <input type="number" value={amount} onChange={onAmountChange} />
+        <button onClick={() => handleDecByAmount(amount)}>
+          Decrement by amount
+        </button>
       </div>
     </div>
   );

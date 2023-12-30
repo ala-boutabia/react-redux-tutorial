@@ -15,7 +15,7 @@ const counterReducer = (state = { count: 0 }, action) => {
       return { ...state, count: state.count + Number(action.payload) };
     }
     case DEC_BY_AMOUNT: {
-      return { ...state, count: state.count - 5 };
+      return { ...state, count: state.count - Number(action.payload) };
     }
     default:
       return state;

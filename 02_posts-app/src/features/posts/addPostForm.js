@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 const AddPostForm = () => {
   const [title, setTitle] = useState("");

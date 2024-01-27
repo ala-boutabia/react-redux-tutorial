@@ -11,12 +11,12 @@ const iceSlice = createSlice({
     sell: (state) => {
       state.numberOfIceCream -= 1;
     },
-    restocke: (state, action) => {
+    restock: (state, action) => {
       state.numberOfIceCream += action.payload;
     },
   },
 });
 
-export const { sell, restocke } = iceSlice.actions;
+export const { sell, restock } = iceSlice.actions;
 
 export default iceSlice.reducer;

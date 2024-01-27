@@ -1,0 +1,14 @@
+.sidebar {
+  width: 25%;
+  background-color: #888;
+  height: calc(100vh - 69px);
+}
+
+.sidebar li a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #16004b;
+  color: bisque;
+  font-size: 1.3rem;
+}

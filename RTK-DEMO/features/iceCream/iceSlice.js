@@ -9,7 +9,7 @@ const iceSlice = createSlice({
   initialState,
   reducers: {
     sell: (state) => {
-      state.numberOfIceCream -= 1;
+      state.numberOfIceCream--;
     },
     restock: (state, action) => {
       state.numberOfIceCream += action.payload;

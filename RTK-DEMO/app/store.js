@@ -12,7 +12,6 @@ const store = configureStore({
     cake: cakeSlice,
     iceCream: iceSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(log),
 });
 
 export default store;

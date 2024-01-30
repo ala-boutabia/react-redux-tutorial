@@ -1,6 +1,7 @@
 import { ordered, restocked } from "./features/cake/cakeSlice.js";
 import { sell, restock } from "./features/iceCream/iceSlice.js";
 import store from "./app/store.js";
+import { fetchUsers } from "./features/users/userSlice.js";
 
 console.log("Initial state: ", store.getState());
 const unsubscribe = store.subscribe(() => {
@@ -8,6 +9,9 @@ const unsubscribe = store.subscribe(() => {
 });
 // logger will replace it
 
+store.dispatch(fetchUsers());
+
+/*
 // Cake actions
 console.log("\n**************** Cake actions begin *****************");
 store.dispatch(ordered());
@@ -23,5 +27,6 @@ store.dispatch(sell());
 store.dispatch(sell());
 store.dispatch(sell());
 store.dispatch(restock(3));
+*/
 
-unsubscribe();
+//unsubscribe();
